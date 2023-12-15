@@ -1,0 +1,33 @@
+spring:
+  application.name: MS-MAPSTRUCT-LOMBOK
+  main.banner-mode: off
+  datasource.url: jdbc:mysql://root:root@localhost:3306/spring_hexagonal # MYSQL
+  jpa:
+    hibernate.ddl-auto: update
+    show-sql: true
+    open-in-view: false
+  data.rest.return-body-on-create: true
+  web.locale: es_ES_#Latn
+  mvc.servlet.path: /api/v1
+server:
+  port: ${PORT:${SERVER_PORT:8080}}
+  server-header: ${spring.application.name}
+  compression.enabled: true
+  error:
+    whitelabel.enabled: false
+    path: /disabled
+    include-message: always
+    include-binding-errors: always
+    include-stacktrace: on-param
+logging.level:
+  '[org.springframework.web.servlet.mvc]': off
+  '[org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext]': off
+
+  '[org.springframework.boot.devtools]': off
+  '[org.springframework.data.repository.config.RepositoryConfigurationDelegate]': off
+  '[org.springframework.orm.jpa]': off
+  '[org.hibernate.jpa.internal.util.LogHelper]': off
+  '[org.apache.catalina]': off
+  '[com.zaxxer.hikari]': off
+  '[org.hibernate]': off
+  '[nr]': info

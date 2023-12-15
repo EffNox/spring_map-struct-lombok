@@ -1,0 +1,20 @@
+###~###~###~###~###~###
+GET {{V1}}/todo
+
+###~###~###~###~###~###
+POST {{V1}}/todo? trace
+
+{
+    "userId": "_{{$guid}}",
+    "title": "Title task {{$randomInt 9 99}}",
+    "completed": {{$randomInt 0 2}}
+}
+
+###~###~###~###~###~###
+PUT {{V1}}/todo/-4
+
+{
+    "userId": "{{$guid}}",
+    "title": "Title task {{$randomInt 9 99}}",
+    "completed": {{$randomInt 0 2}}
+}
